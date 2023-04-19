@@ -46,9 +46,9 @@ def test_apply_pay_rate_negative_pay_rate():
     Item.discount = -0.1  # отрицательная скидка
     item1 = Item("Смартфон", 10000, 20)
     item2 = Item("Ноутбук", 20000, 5)
-    item1.apply_pay_rate(Item.pay_rate)
-    assert item1.price == -0.15
-    assert item2.price == -2
+    item1.apply_pay_rate(0.1)
+    assert item1.price == 9000
+    assert item2.price == 20000
 
 
 def test_apply_pay_rate_positive_pay_rate():
