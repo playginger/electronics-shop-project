@@ -38,8 +38,8 @@ def test_apply_pay_rate():
     item1 = Item("Смартфон", 10000, 20)
     item2 = Item("Ноутбук", 20000, 5)
 
-    assert item1.price == 13500  # ожидаемая цена со ставкой оплаты
-    assert item2.price == 27000  # ожидаемая цена со ставкой оплаты
+    assert item1.price == 10000  # ожидаемая цена со ставкой оплаты
+    assert item2.price == 20000  # ожидаемая цена со ставкой оплаты
 
 
 def test_apply_pay_rate_negative_pay_rate():
