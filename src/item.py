@@ -34,8 +34,8 @@ class Item:
 
     @classmethod
     def instantiate_from_csv(cls):
-        with open('../src/items.csv', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
+        with open('src/items.csv', newline='') as csvfile:
+            reader = csv.DictReader(csvfile)
             for word in reader:
                 cls.all.append(cls(word['name'], word['price'], word['quantity']))
 
