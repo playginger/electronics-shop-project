@@ -59,4 +59,19 @@ def test_apply_pay_rate_positive_pay_rate():
     assert item1.price == 5000 and item2.price == 20000
 
 
+def test_name_setter():
+    item = Item('Смартфон', 10000, 1)
+    item.name = 'Ноутбук'
+    assert item.name == 'Ноутбук'
 
+
+def test_instantiate_from_csv():
+    item1 = Item('Смартфон', 10000, 1)
+    item1.instantiate_from_csv()
+    assert len(Item.all) == 5
+    assert Item.all[0].name == 'Смартфон'
+
+
+def test_string_to_number():
+    item = Item('Смартфон', 10000, 1)
+    assert isinstance(item.string_to_number(item.quantity), int)
