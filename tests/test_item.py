@@ -57,3 +57,6 @@ def test_apply_pay_rate_positive_pay_rate():
     item2 = Item("Ноутбук", 20000, 5)
     item1.apply_pay_rate(Item.pay_rate)  # передать pay_rate как аргумент
     assert item1.price == 5000 and item2.price == 20000
+
+
+
