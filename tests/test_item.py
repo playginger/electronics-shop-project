@@ -33,7 +33,7 @@ assert item.name == 'Ноутбук'
 
 item1 = Item('Смартфон', 10000, 1)
 item1.instantiate_from_csv()
-assert len(Item.all) == 5
+assert len(Item.all) == 20
 assert Item.all[0].name == 'Смартфон'
 
 item = Item('Смартфон', 10000, 1)
