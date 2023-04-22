@@ -7,6 +7,7 @@ class Item:
     """
     pay_rate = 1.0
     all = []
+    discount = 1
 
     def __init__(self, name: str, price: float, quantity: int) -> None:
         """
@@ -56,3 +57,14 @@ class Item:
         Применяет установленную скидку для конкретного товара.
         """
         self.price *= self.pay_rate
+
+    def total_price(self):
+        return self.price * self.quantity
+
+    def apply_pay_rate(self, pay_rate):
+        if pay_rate < 0:
+            raise ValueError("Pay rate cannot be negative")
+        elif pay_rate > 1:
+            raise ValueError("Pay rate cannot be greater than 1")
+        else:
+            self.price *= (1 - pay_rate)
