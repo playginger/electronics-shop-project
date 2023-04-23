@@ -35,10 +35,15 @@ class Item:
 
     @classmethod
     def instantiate_from_csv(cls):
-        with open('src/items.csv', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for word in reader:
-                cls.all.append(cls(word['name'], word['price'], word['quantity']))
+        cls.all = []
+        with open('../src/items.csv', newline='') as f:
+            reader = csv.reader(f)
+            next(reader)
+            for row in reader:
+                name = row[0]
+                price = float(row[1])
+                quantity = int(row[2])
+                cls(name, price, quantity)
 
     @staticmethod
     def string_to_number(number):
@@ -63,8 +68,8 @@ class Item:
 
     def apply_pay_rate(self, pay_rate):
         if pay_rate < 0:
-            raise ValueError("Pay rate cannot be negative")
+            raise ValueError("Ставка оплаты не может быть отрицательной")
         elif pay_rate > 1:
-            raise ValueError("Pay rate cannot be greater than 1")
+            raise ValueError("Ставка оплаты не может быть больше 1")
         else:
             self.price *= (1 - pay_rate)
