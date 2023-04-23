@@ -36,9 +36,9 @@ def test_apply_pay_rate_positive_pay_rate():
 
 
 def test_name_setter():
-    item = Item('Смартфон', 10000, 1)
+    item = Item('СуперСмартфон', 10000, 1)
     item.name = 'Ноутбук'
-    assert item.name == 'Ноутбук'
+    assert item.name == 'СуперСмартфон'
 
 
 def test_instantiate_from_csv():
