@@ -1,4 +1,5 @@
 import csv
+import os
 
 
 class Item:
@@ -36,7 +37,7 @@ class Item:
     @classmethod
     def instantiate_from_csv(cls):
         cls.all = []
-        with open('../src/items.csv', newline='') as f:
+        with open(os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) , 'src', 'items.csv')) as f:
             reader = csv.reader(f)
             next(reader)
             for row in reader:
