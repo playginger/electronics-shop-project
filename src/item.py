@@ -37,7 +37,8 @@ class Item:
     @classmethod
     def instantiate_from_csv(cls):
         cls.all = []
-        with open(os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) , 'src', 'items.csv')) as f:
+        with open(
+                os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')), 'src', 'items.csv')) as f:
             reader = csv.reader(f)
             next(reader)
             for row in reader:
