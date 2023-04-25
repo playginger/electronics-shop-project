@@ -3,6 +3,20 @@
 from src.item import Item
 
 
+def test_repr():
+    item1 = Item("Смартфон", 10000, 20)
+    item2 = Item("Ноутбук", 20000, 5)
+    assert repr(item1) == 'Item,(Смартфон,10000,20)'
+    assert repr(item2) == 'Item,(Ноутбук,20000,5)'
+
+
+def test_str():
+    item1 = Item("Смартфон", 10000, 50)
+    item2 = Item("Ноутбук", 20000, 15)
+    assert str(item1) == 'Смартфон(50)'
+    assert str(item2) == 'Ноутбук(15)'
+
+
 def test_total_price():
     item1 = Item("Смартфон", 10000, 20)
     item2 = Item("Ноутбук", 20000, 5)
