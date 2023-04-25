@@ -13,8 +13,8 @@ def test_repr():
 def test_str():
     item1 = Item("Смартфон", 10000, 50)
     item2 = Item("Ноутбук", 20000, 15)
-    assert str(item1) == 'Смартфон(50)'
-    assert str(item2) == 'Ноутбук(15)'
+    assert str(item1) == 'Смартфон'
+    assert str(item2) == 'Ноутбук'
 
 
 def test_total_price():
