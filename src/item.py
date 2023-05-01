@@ -18,6 +18,8 @@ class Item:
         :param price: Цена за единицу товара.
         :param quantity: Количество товара в магазине.
         """
+
+        super().__init__()
         self.__name = name
         self.price = price
         self.quantity = quantity
@@ -27,7 +29,12 @@ class Item:
         return f"{self.__class__.__name__}('{self.__name}', {self.price}, {self.quantity})"
 
     def __str__(self):
-        return self.__name
+        return f'{self.__name}'
+
+    def __add__(self, other):
+        if not isinstance(other, Item):
+            raise ValueError('Складывать можно только объекты Item и дочерние от них.')
+        return int(self.quantity + other.quantity)
 
     @property
     def name(self):
